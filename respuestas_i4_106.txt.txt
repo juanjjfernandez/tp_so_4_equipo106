@@ -1,0 +1,37 @@
+A- ¿Qué color de fondo tiene su página en el TESTING?
+R: BLUE – fue modificado por BETA en la rama TESTING.
+
+B- ¿Qué color de fondo tiene su página en el DESARROLLO?
+R: YELLOW – modificado por ALFA y mergeado correctamente.
+
+C- ¿Qué color de fondo tiene su página en el MASTER?
+R: YELLOW – GAMMA resolvió el conflicto del merge TESTING → MAIN manteniendo el color de DESARROLLO.
+
+D- ¿Qué favicon quedó en el MASTER, el de ALFA o el de BETA?
+R: (COMPLETAR según cuál quedó en el repo)
+Ejemplo: El favicon de BETA, ya que fue el último en modificarlo antes del merge.
+
+
+
+
+
+
+
+
+E- ¿Algún integrante tuvo problemas al hacer el push?
+R: Sí. BETA y GAMMA tuvieron problemas porque ALFA hizo push primero, lo que generó una diferencia entre sus repos y el remoto.
+
+F- ¿Qué problemas surgieron?
+R: Git rechazó el push de BETA y GAMMA porque el repositorio remoto tenía commits que ellos no tenían localmente. Esto provocó la necesidad de hacer un git pull --rebase.
+
+G- ¿Qué soluciones pueden aplicar y cuál sería la consecuencia de cada solución adoptada?
+R:
+Solución correcta: usar git pull --rebase, resolver los conflictos y continuar.
+Consecuencia: permite mantener una historia limpia y subir los cambios sin sobrescribir a los demás.
+Otra (no recomendada): usar git push -f, lo que sobrescribe el historial remoto y puede borrar trabajo de otros.
+
+H- ¿Qué sucede si cada uno utiliza git push -f?
+R: Podrían sobreescribirse mutuamente el trabajo. Se perderían los commits anteriores y cada integrante estaría "borrando" lo que el otro subió.
+
+I- ¿Qué debo hacer para que el index.html tenga todos los <p> de los puntos 18, 19 y 20 en DESARROLLO?
+R: Hacer merge de TESTING a DESARROLLO y resolver los conflictos en index.html dejando los tres <p> de ALFA, BETA y GAMMA. Luego hacer add, commit y push en DESARROLLO.
